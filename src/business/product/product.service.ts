@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from './product.entity';
+import { createServiceResponseHandlers } from '../../common/helpers';
 
 @Injectable()
 export class ProductService {
@@ -23,7 +24,13 @@ export class ProductService {
     return await this.productRepository.findOneBy({ id });
   }
 
-  async getAllProducts(): Promise<Product[]> {
-    return await this.productRepository.find();
+  async getAllProducts() {
+    const { buildSuccess, buildFailure } =
+      createServiceResponseHandlers('getAllProducts');
+    const products = await this.productRepository.find();
+    if (products) {
+      return buildSuccess('GET_ALL_PRODUCTS_SUCCESSFULLY', products);
+    }
+    return buildFailure('GET_ALL_PRODUCTS_FAILED');
   }
 }

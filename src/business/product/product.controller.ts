@@ -7,6 +7,20 @@ import { Product } from './product.entity';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
+  @GrpcMethod('ProductService', 'GetAllProducts')
+  async getAllProducts(): Promise<{ products: Product[] }> {
+    const {
+      success,
+      code,
+      data: products,
+    } = await this.productService.getAllProducts();
+    if (success) return { products };
+    switch (code) {
+      case 'GET_ALL_PRODUCTS_FAILED':
+        return { products: [] };
+    }
+  }
+
   @GrpcMethod('ProductService', 'CreateProduct')
   async createProduct(data: {
     name: string;
@@ -25,11 +39,5 @@ export class ProductController {
   async getProductById(data: { id: string }): Promise<{ product: Product }> {
     const product = await this.productService.getProductById(data.id);
     return { product };
-  }
-
-  @GrpcMethod('ProductService', 'GetAllProducts')
-  async getAllProducts(): Promise<{ products: Product[] }> {
-    const products = await this.productService.getAllProducts();
-    return { products };
   }
 }

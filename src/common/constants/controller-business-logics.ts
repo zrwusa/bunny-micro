@@ -1,4 +1,4 @@
-export const CONTROLLER_BUSINESS_LOGICS = {
+export const CONTROLLER_BL = {
   getAllProducts: {
     GET_ALL_PRODUCTS_SUCCESSFULLY: {
       en: 'Get all product successfully',

@@ -38,6 +38,9 @@ importers:
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1
+      bunny-common:
+        specifier: link:../bunny-common
+        version: link:../bunny-common
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1

@@ -16,7 +16,7 @@ message CreateProductRequest {
 }
 
 message ProductListResponse {
-    repeated Product products = 1;
+  repeated Product products = 1;
 }
 
 message ProductResponse {
@@ -32,5 +32,5 @@ message Empty {}
 service ProductService {
   rpc CreateProduct(CreateProductRequest) returns (ProductResponse);
   rpc GetProductById(ProductIdRequest) returns (ProductResponse);
-  rpc GetAllProducts(Empty) returns (ProductListResponse); 
+  rpc GetAllProducts(Empty) returns (ProductListResponse);
 }

@@ -1,6 +1,6 @@
 import { CreatedAtField, IdField, UpdatedAtField } from 'src/common';
 import { generateUuNumId } from 'src/utils';
-import { Entity, Column, BeforeInsert, PrimaryColumn } from 'typeorm';
+import { BeforeInsert, Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
 export class Product {
