@@ -1,4 +1,4 @@
-import { IdField } from '../../common';
+import { IdField } from '../../../common';
 
 export class DeleteProductDto {
   @IdField('product')

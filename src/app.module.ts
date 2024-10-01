@@ -5,8 +5,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TranslationService } from './translation.service';
-import { Product } from './product/product.entity';
-import { ProductModule } from './product/product.module';
+import { Product } from './business/product/product.entity';
+import { ProductModule } from './business/product/product.module';
 
 @Module({
   imports: [

@@ -1,5 +1,5 @@
 // src/response-product.dto.ts
-import { CreatedAtField, IdField, UpdatedAtField } from '../../common';
+import { CreatedAtField, IdField, UpdatedAtField } from '../../../common';
 
 export class ResponseProductDto {
   @IdField('product')

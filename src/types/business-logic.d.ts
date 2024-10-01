@@ -1,7 +1,7 @@
-import {
+import type {
   CONTROLLER_BUSINESS_LOGICS,
   SERVICE_BUSINESS_LOGICS,
-} from '../common/constants';
+} from '../common';
 import { SecondLevelKeys } from './utils';
 
 export type ServiceBusinessLogicCode = SecondLevelKeys<
