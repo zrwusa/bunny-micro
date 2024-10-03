@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package product;
 
+// Product message definition
 message Product {
   string id = 1;
   string name = 2;
@@ -9,18 +10,11 @@ message Product {
   string description = 4;
 }
 
+// Request messages
 message CreateProductRequest {
   string name = 1;
   double price = 2;
   string description = 3;
-}
-
-message ProductListResponse {
-  repeated Product products = 1;
-}
-
-message ProductResponse {
-  Product product = 1;
 }
 
 message ProductIdRequest {
@@ -29,8 +23,46 @@ message ProductIdRequest {
 
 message Empty {}
 
+
+// Define BlStack as a message
+message BlStack {
+  string method = 1;
+  string message = 2;
+}
+
+// Standardized response format
+message CreateProductResponse {
+  bool success = 1;
+  string serviceName = 2;
+  string layer = 3;
+  string code = 4;
+  BlStack blStack = 5;
+  Product data = 6;
+}
+
+message GetAllProductsResponse {
+  bool success = 1;
+  string serviceName = 2;
+  string layer = 3;
+  string code = 4;
+  BlStack blStack = 5;
+  repeated Product data = 6;
+}
+
+
+
+message GetProductByIdResponse {
+  bool success = 1;
+  string serviceName = 2;
+  string layer = 3;
+  string code = 4;
+  BlStack blStack = 5;
+  Product data = 6;
+}
+
+// Define the ProductService service
 service ProductService {
-  rpc CreateProduct(CreateProductRequest) returns (ProductResponse);
-  rpc GetProductById(ProductIdRequest) returns (ProductResponse);
-  rpc GetAllProducts(Empty) returns (ProductListResponse);
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse);
+  rpc GetProductById(ProductIdRequest) returns (GetProductByIdResponse);
+  rpc GetAllProducts(Empty) returns (GetAllProductsResponse);
 }

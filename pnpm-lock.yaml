@@ -39,8 +39,8 @@ importers:
         specifier: ^5.1.1
         version: 5.1.1
       bunny-common:
-        specifier: link:../bunny-common
-        version: link:../bunny-common
+        specifier: ^0.6.6
+        version: 0.6.6(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
       class-transformer:
         specifier: ^0.5.1
         version: 0.5.1
@@ -1125,6 +1125,9 @@ packages:
 
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
+
+  bunny-common@0.6.6:
+    resolution: {integrity: sha512-v0vFqPYXyabAY2qaqELlcfm58+Dut1SGCE2Q/cT+Nzub79TGWGlxlS/9clBO3TBy0Rq/sca5zmtqU0e+kVkJFQ==}
 
   busboy@1.6.0:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
@@ -4557,6 +4560,15 @@ snapshots:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+
+  bunny-common@0.6.6(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1):
+    dependencies:
+      '@nestjs/common': 10.4.1(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+    transitivePeerDependencies:
+      - class-transformer
+      - class-validator
+      - reflect-metadata
+      - rxjs
 
   busboy@1.6.0:
     dependencies:
