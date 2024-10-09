@@ -2,7 +2,7 @@ import { Controller, NotFoundException } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import { ProductService } from './product.service';
 import { Product } from './product.entity';
-import { controllerResponseCreator } from '../../common/helpers/bl-response';
+import { controllerResponseCreator } from '../../common/helpers';
 import { UnknownExportException } from '@nestjs/core/errors/exceptions';
 
 @Controller()

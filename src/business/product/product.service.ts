@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Product } from './product.entity';
-import { serviceResponseCreator } from '../../common/helpers/bl-response';
+import { serviceResponseCreator } from '../../common/helpers';
 
 @Injectable()
 export class ProductService {

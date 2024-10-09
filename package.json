@@ -11,6 +11,7 @@
     "dev": "nest start --watch",
     "debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
+    "gen:ts-proto": "grpc_tools_node_protoc --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=./src/grpc/generated --ts_proto_opt=outputServices=nice-grpc,outputServices=generic-definitions,useExactTypes=false --proto_path=./src/grpc/proto src/grpc/proto/*.proto ",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "test": "jest",
@@ -20,6 +21,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@bufbuild/protobuf": "^2.2.0",
     "@grpc/grpc-js": "^1.11.3",
     "@grpc/proto-loader": "^0.7.13",
     "@nestjs/common": "^10.0.0",
@@ -34,9 +36,13 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "connect-redis": "^7.1.1",
+    "grpc-tools": "^1.12.4",
     "ioredis": "^5.4.1",
+    "nice-grpc": "^2.1.10",
+    "nice-grpc-common": "^2.0.2",
     "pg": "^8.12.0",
     "rxjs": "^7.8.1",
+    "ts-proto": "^2.2.3",
     "typeorm": "^0.3.20",
     "uuid": "^10.0.0"
   },

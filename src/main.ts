@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
 
-  const PROTO_PATH = join(__dirname, './proto/product.proto');
+  const PROTO_PATH = join(__dirname, './grpc/proto/product.proto');
 
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.GRPC,
